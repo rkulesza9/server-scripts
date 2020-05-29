@@ -8,6 +8,9 @@ ESSID="$1"
 PASSWORD="$2"
 INTERFACE="$3"
 
+WIFI_SUCCESS='\n\nWifi Connection Exists!'
+WIFI_FAILURE='\n\nWifi Connection Failure!'
+
 
 help(){
 	local HELP='--help'
@@ -18,13 +21,10 @@ help(){
 }
 
 wifi_connected(){
-	local WIFI_SUCCESS='\n\nWifi Connection Exists!'
-	local WIFI_FAILURE='\n\nWifi Connection Failure!'
-
 	if ping -c 1 google.com; then
-		echo -e "$WIFI_SUCCESS"
+		echo -e "$1"
 	else
-		echo -e "$WIFI_FAILURE"
+		echo -e "$2"
 	fi
 }
 
@@ -46,4 +46,15 @@ test_method(){
 	echo "$DUCK"
 }
 
-test_method
+main(){
+	if help; then
+
+	elif [["$(wifi_connected SUCCESS FAILURE)" == "FAILURE"]]; then
+		wifi_connect
+		echo wifi_connected '$WIFI_SUCCESS' '$WIFI_FAILURE'
+	else 
+		echo "$WIFI_SUCCESS"
+	fi
+}
+
+main
