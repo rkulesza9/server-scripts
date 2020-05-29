@@ -4,14 +4,14 @@
 # check if wifi exists
 # output success or failure
 
-ESSID = "$1"
-PASSWORD = "$2"
-INTERFACE = "$3"
+ESSID="$1"
+PASSWORD="$2"
+INTERFACE="$3"
 
 
 help(){
-	local HELP = '--help'
-	local HELP_MSG = 'args = [ESSID] [PASSWORD] [INTERFACE]'
+	local HELP='--help'
+	local HELP_MSG='args = [ESSID] [PASSWORD] [INTERFACE]'
 	if [["$ESSID" == "$HELP"]]; then
 		echo "$HELP_MSG"
 	fi
@@ -29,7 +29,7 @@ wifi_connected(){
 }
 
 wifi_connect(){
-	local CONFIG = '/etc/wpa_supplicant.conf'
+	local CONFIG='/etc/wpa_supplicant.conf'
 
 	rfkill unblock wifi
 	killall wpa_supplicant
