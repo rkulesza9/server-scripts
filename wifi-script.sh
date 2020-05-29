@@ -7,6 +7,6 @@
 WIFI_SUCCESS='\n\nWifi Connection Exists!'
 
 if ping -c 1 google.com; then
-	echo "$WIFI_SUCCESS"
+	echo -e "$WIFI_SUCCESS"
 	exit
 fi
