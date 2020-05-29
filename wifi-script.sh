@@ -8,8 +8,8 @@ ESSID="$1"
 PASSWORD="$2"
 INTERFACE="$3"
 
-WIFI_SUCCESS='\n\nWifi Connection Exists!'
-WIFI_FAILURE='\n\nWifi Connection Failure!'
+WIFI_SUCCESS='Wifi Connection Exists!'
+WIFI_FAILURE='Wifi Connection Failure!'
 
 
 help(){
@@ -51,7 +51,7 @@ main(){
 		exit
 	elif [[ "$(wifi_connected SUCCESS FAILURE)" == "FAILURE" ]]; then
 		wifi_connect
-		echo wifi_connected '$WIFI_SUCCESS' '$WIFI_FAILURE'
+		echo wifi_connected "$WIFI_SUCCESS" "$WIFI_FAILURE"
 	else 
 		echo "$WIFI_SUCCESS"
 	fi
