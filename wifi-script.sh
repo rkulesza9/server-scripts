@@ -4,7 +4,7 @@
 # check if wifi exists
 # output success or failure
 
-WIFI_SUCCESS="\n\nWifi Connection Exists!"
+WIFI_SUCCESS='\n\nWifi Connection Exists!'
 
 if ping -c 1 google.com; then
 	echo "$WIFI_SUCCESS"
