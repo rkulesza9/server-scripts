@@ -41,7 +41,7 @@ wifi_connect(){
 }
 
 test_method(){
-	local DUCK = "duck"
+	local DUCK="duck"
 	echo "$ESSID $PASSWORD $INTERFACE"
 	echo "$DUCK"
 }
