@@ -15,7 +15,7 @@ WIFI_FAILURE='\n\nWifi Connection Failure!'
 help(){
 	local HELP='--help'
 	local HELP_MSG='args = [ESSID] [PASSWORD] [INTERFACE]'
-	if [["$ESSID" == "$HELP"]]; then
+	if [[ "$ESSID" == "$HELP" ]]; then
 		echo "$HELP_MSG"
 	fi
 }
