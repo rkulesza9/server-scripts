@@ -48,8 +48,8 @@ test_method(){
 
 main(){
 	if help; then
-		echo '$(help)'
-	elif [["$(wifi_connected SUCCESS FAILURE)" == "FAILURE"]]; then
+		echo "$(help)"
+	elif [[ "$(wifi_connected SUCCESS FAILURE)" == "FAILURE" ]]; then
 		wifi_connect
 		echo wifi_connected '$WIFI_SUCCESS' '$WIFI_FAILURE'
 	else 
