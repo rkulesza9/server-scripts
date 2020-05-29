@@ -51,7 +51,7 @@ main(){
 		exit
 	elif [[ "$(wifi_connected SUCCESS FAILURE)" == "FAILURE" ]]; then
 		wifi_connect
-		echo wifi_connected "$WIFI_SUCCESS" "$WIFI_FAILURE"
+		echo "$(wifi_connected $WIFI_SUCCESS $WIFI_FAILURE)"
 	else 
 		echo "$WIFI_SUCCESS"
 	fi
